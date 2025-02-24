@@ -49,7 +49,22 @@ if (transactions.length === 0) {
 // - totalIncome: Sum of all positive transactions.
 // - totalExpenses: Sum of all negative transactions.
 // - netBalance: Total of totalIncome and totalExpenses.
+let totalTransactions = transactions.length;
+let totalSum = addUpArrayElements(transactions);
+let averageTransaction = totalSum / totalTransactions;
+let totalIncome = 0;
+let totalExpenses = 0;
 
+transactions.forEach(transaction => {
+  if (transaction > 0) {
+    totalIncome += transaction;
+  }
+  else {
+    totalExpenses += transaction;
+  }
+});
+
+let netBalance = totalIncome + totalExpenses;
 
 // Create an array of fun fact rows. Each row is a two-element array: [Fact, Value].
 const funFacts = [
